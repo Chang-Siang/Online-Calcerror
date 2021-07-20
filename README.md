@@ -3,8 +3,7 @@
 
 此工具能夠以一致的方式計算績效，使結果可以被比較
 
-# Demo
-https://chang-siang.github.io/Online-Calcerror/#/
+[Demo](https://chang-siang.github.io/Online-Calcerror/#/)
 
 [GitHub](https://github.com/Chang-Siang/Online-Calcerror/)
 
