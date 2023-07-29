@@ -1,5 +1,4 @@
 import React from "react";
-// Bs components
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Badge from 'react-bootstrap/Badge'

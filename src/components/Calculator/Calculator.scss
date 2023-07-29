@@ -1,6 +1,6 @@
 @mixin responsive($type) {
 
-    // 判斷變數是lg, md, sm, xs，再依照判斷出來的載入對應的media query
+    // 判斷變數是 lg, md, sm 或 xs，再依照判斷出來的載入對應的 media query
     @if $type==lg {
         @media only screen and (min-width: 1200px) {
             @content;
@@ -39,7 +39,7 @@
     }
 }
 
-.Calculator {
+.calculator {
     margin-top: -45px;
     .row {
         padding: 15px 0;
@@ -93,9 +93,6 @@
     }
 
     .calculator-score {
-        // .row-title {
-        // text-align: center;
-
         .score-type {
             position: relative;
             text-align: center;
@@ -135,8 +132,6 @@
 
         }
 
-        // }
-
         form {
             .form-row {
                 margin: 0 5px;
@@ -152,7 +147,5 @@
                 }
             }
         }
-
-
     }
 }

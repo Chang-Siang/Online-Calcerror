@@ -1,7 +1,7 @@
 import React from "react";
 // import CSVReader from "react-csv-reader";
 import { CSVReader } from 'react-papaparse'
-import '../../stylesheets/Reader.scss'
+import './ForecastReader.scss'
 
 const papaparseOptions = {
   header: true,

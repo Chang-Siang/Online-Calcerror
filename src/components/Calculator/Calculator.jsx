@@ -1,26 +1,19 @@
 import React from 'react';
 import { Component } from 'react';
-import { readRemoteFile } from 'react-papaparse'
-import moment from 'moment';
 import { MAPE, nRMSE } from '../../lib/Metrics'
-// Bs components
+// BS components
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Badge from 'react-bootstrap/Badge'
 import Button from 'react-bootstrap/Button'
-
 // view components
 import ForecastReader from './ForecastReader'
 import ClacScore from './ClacScore'
-import '../../stylesheets/Calculator.scss';
+import './Calculator.scss';
 
 let ajaxUrl = "http://localhost:3020/"
 
-
 class Calculator extends Component {
-    // ---------------------------------------------------
-    // 生命週期
-    // ---------------------------------------------------
     constructor() {
         super()
         this.state = {
@@ -42,10 +35,8 @@ class Calculator extends Component {
     }
 
     ajaxServerItemAdd = (addItem) => {
-        //處理payload
         const payload = addItem
 
-        //作POST
         fetch(ajaxUrl + 'ranking', {
             method: 'POST',
             headers: {
@@ -54,25 +45,18 @@ class Calculator extends Component {
             body: JSON.stringify(payload)
         })
             .then((response) => {
-                //ok 代表狀態碼在範圍 200-299
+                // ok = 200-299
                 if (!response.ok) throw new Error(response.statusText)
                 return response.json()
             })
-            .then((item) => {
-                //這裡可以顯示一些訊息，或是結束指示動畫…
-                alert("儲存成功")
-
+            .then(() => {
+                alert("Success")
             })
-            .catch((error) => {
-                //這裡可以顯示一些訊息
-                // alert("儲存失敗")
-                console.error('error:', error)
+            .catch(() => {
+                alert("Fail")
             })
     }
 
-    // ---------------------------------------------------
-    // 主程式
-    // ---------------------------------------------------
     getRealData = () => {
         const newData = [...this.state.real]
         return newData
@@ -150,10 +134,6 @@ class Calculator extends Component {
         }
     }
 
-    // ---------------------------------------------------
-    // handle action
-    // ---------------------------------------------------
-
     handleForce = (target, data, fileName) => {
         // 檢查附檔名，若不符合則判斷上傳失敗
         const validExts = [".xlsx", ".xls", ".csv"]
@@ -172,7 +152,6 @@ class Calculator extends Component {
     }
 
     handleTextareaChange = (target, e) => {
-
         let ary = String(e.target.value).split('\n')
         if (target === 'pred') {
             this.setState({ pred: ary })
@@ -183,7 +162,7 @@ class Calculator extends Component {
 
     render() {
         return (
-            <div className="Calculator">
+            <div className="calculator">
                 <Row>
                     <Col xs={12} md={6}>
                         <Row className="align-items-center calculator-textarea">

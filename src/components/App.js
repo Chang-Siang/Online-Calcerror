@@ -5,15 +5,13 @@ import Footer from './Footer'
 import Calculator from './Calculator'
 import Ranking from './Ranking'
 
-// import logo from '../logo.svg';
-// import '../stylesheets/App.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'glyphicons-only-bootstrap/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container'
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <div className="main">
         <Header />
         <Container>

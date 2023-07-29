@@ -1,15 +1,20 @@
-// ref(參考) https://github.com/nickpoorman/rmse
-
+/* ref https://github.com/nickpoorman/rmse */
 
 /**
- * compute the error
+ * @description compute the error
+ * @param {number} real - the real value
+ * @param {number} pred - the predicted value
+ * @returns {number} the error
  */
 const error = (real, pred) => {
     return pred - real;
 }
 
 /**
- * compute the squared error
+ * @description compute the squared error
+ * @param {number} real - the real value
+ * @param {number} pred - the predicted value
+ * @returns {number} the squared error
  */
 const squaredError = (real, pred) => {
     var squaredError = [];
@@ -20,7 +25,10 @@ const squaredError = (real, pred) => {
 }
 
 /**
- * compute the absolute percentage error
+ * @description compute the absolute percentage error
+ * @param {number} real - the real value
+ * @param {number} pred - the predicted value
+ * @returns {number} the absolute percentage error
  */
 const absolutePercentageError = (real, pred) => {
     var absolutePercentageError = [];
@@ -31,7 +39,9 @@ const absolutePercentageError = (real, pred) => {
 }
 
 /**
- * compute the mean
+ * @description compute the mean
+ * @param {number} val - the values
+ * @returns {number} the mean
  */
 const mean = (val) => {
     var total = 0;
@@ -42,26 +52,28 @@ const mean = (val) => {
 }
 
 /**
- * compute the mean square error
+ * @description compute the mean square error
  */
-const mse = (real, pred) => {
+const MSE = (real, pred) => {
     return mean(squaredError(real, pred));
 }
 
 /**
- * compute the root mean squared error
+ * @description compute the root mean squared error
  */
 export const RMSE = (real, pred) => {
-    return Math.sqrt(mse(real, pred));
+    return Math.sqrt(MSE(real, pred));
 }
+
 /**
- * compute the n-RMSE
+ * @description compute the n-RMSE
  */
  export const nRMSE = (real, pred) => {
-    return Math.sqrt(mse(real, pred))/mean(real) * 100;
+    return Math.sqrt(MSE(real, pred))/mean(real) * 100;
 }
+
 /**
- * compute the mean absolute percentage error
+ * @description compute the mean absolute percentage error
  */
 export const MAPE = (real, pred) => {
     return mean(absolutePercentageError(real, pred)) * 100;
