@@ -6,8 +6,6 @@
 
 ![image](./image/preview.jpg?raw=true)
 
-[TOC]
-
 ## Usage
 
 您有 2 種方式可以輸入資料，以進行誤差計算
