@@ -181,7 +181,7 @@ class Calculator extends Component {
                                 <ForecastReader handleForce={(...e) => this.handleForce('real', ...e)} />
                                 {/* <br /> */}
                                 <Badge pill variant="secondary">
-                                    <a href='https://raw.githubusercontent.com/Chang-Siang/onlinecalcerror/master/public/template/Template(Real).csv' target='_blank'>
+                                    <a href='https://raw.githubusercontent.com/siang-chang/react-online-calcerror/master/public/template/template-real.csv' target='_blank'>
                                         <span className="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
                                         File format template
                                     </a>
@@ -206,7 +206,7 @@ class Calculator extends Component {
                                 <ForecastReader handleForce={(...e) => this.handleForce('pred', ...e)} />
                                 {/* <br /> */}
                                 <Badge pill variant="secondary">
-                                    <a href='https://raw.githubusercontent.com/Chang-Siang/onlinecalcerror/master/public/template/Template(Pred).csv' target='_blank'>
+                                    <a href='https://raw.githubusercontent.com/siang-chang/react-online-calcerror/master/public/template/template-pred.csv' target='_blank'>
                                         <span className="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
                                         File format template
                                     </a>
